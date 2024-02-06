@@ -1,4 +1,4 @@
-# Dynatrace Operator - EasyTrade monitored with Cloud Native Full Stack
+# Dynatrace Operator - EasyTrade lab
 
 ## Dynakube Cloud Native Full Stack
 Setup the variables
@@ -15,27 +15,22 @@ Create namepspace
 
     kubectl create namespace dynatrace
     
-Dynatrace operator & CSI driver installation  
+Dynatrace operator
 
     kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes.yaml
-    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
 
 Waiting Dynatrace operator
 
     kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
-
-Create secret and start webhook pod
-
-    kubectl -n dynatrace create secret generic dynakube --from-literal=apiToken=$DT_API_TOKEN  --from-literal=dataIngestToken=$DT_API_TOKEN    
  
-Generate dynakube_cloudnativefullstack.yaml
+Generate dynakube.yaml
 
-    wget  -O dynakube_cloudnativefullstack.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easy_cloudnative_fullstack_deployment/main/dynakube_cloudnativefullstack.yaml
-    cat dynakube_cloudnativefullstack.yaml
+    wget  -O dynakube.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynakube.yaml
+    cat dynakube.yaml
 
 Dynakube installation
 
-    envsubst < dynakube_cloudnativefullstack.yaml | kubectl apply -f -
+    envsubst < dynakube.yaml | kubectl apply -f -
 
 Dynakube validation
 
@@ -154,9 +149,5 @@ Full clean EasyTravel Docker with OA and AG
     /home/dynatracelab_easytraveld/start-stop-easytravel.sh stop
     sudo rm /etc/init.d/start-stop-easytravel.sh
 
-Full clean EasyTravel Classic Full Stack with Istio 
-
-    istioctl x uninstall --purge
-    kubectl delete namespace easytravel
 
     
