@@ -52,9 +52,8 @@ Create namespace
 
 Easytrade installation
 
-    git clone https://github.com/Dynatrace/easytrade.git
-    cd easytrade
-    kubectl -n easytrade apply -f ./kubernetes-manifests
+    git clone https://github.com/Dynatrace/easytrade.git;
+    kubectl -n easytrade apply -f ./easytrade/kubernetes-manifests;
     
 Waiting EasyTrade
 
@@ -87,6 +86,10 @@ Deploy accountservice 1.0.1
 Deploy accountservice 
 
     kubectl rollout restart -n easytrade deployment accountservice
+
+## Cloud native full stack 
+
+  
 
 ## Usefull commands
     
