@@ -87,20 +87,6 @@ Deploy accountservice
 
     kubectl rollout restart -n easytrade deployment accountservice
 
-## Cloud native full stack 
-        
-Change classicFullStack to CloudNativeFUllStack
-
-    vi dynakube.yaml
-
-Install CSI driver
-
-    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
-
-Deploy Dynakube
-
-     envsubst < dynakube.yaml | kubectl apply -f -
-
 ## Usefull commands
     
 Show all namesace
