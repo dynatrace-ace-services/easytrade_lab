@@ -22,6 +22,10 @@ Dynatrace operator
 Waiting Dynatrace operator
 
     kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
+
+Create secret 
+
+    kubectl -n dynatrace create secret generic dynakube --from-literal=dataIngestToken=$DT_API_TOKEN 
  
 Generate dynakube.yaml
 
