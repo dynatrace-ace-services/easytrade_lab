@@ -3,36 +3,30 @@ kind: DynaKube
 metadata:
   name: $CLUSTER
   namespace: dynatrace
+  annotations:
 spec:
   apiUrl: $DT_TENANT_URL/api
-  tokens: dynakube
+  tokens: "dynakube"
   networkZone: $CLUSTER
-  #namespaceSelector:
-  #  matchLabels:
-  #    monitoring: dynatrace
   oneAgent:
-    classicFullStack:
-    #cloudNativeFullStack:
-      image: ""
+    cloudNativeFullStack:
       tolerations:
         - effect: NoSchedule
-          key: node-role.kubernetes.io/master
           operator: Exists
         - effect: NoSchedule
-          key: node-role.kubernetes.io/control-plane
           operator: Exists
       args:
         - --set-host-group=$CLUSTER
       env:
-        - name: ONEAGENT_ENABLE_VOLUME_STORAGE
-          value: "true"
+      - name: ONEAGENT_ENABLE_VOLUME_STORAGE
+        value: "true"
   activeGate:
     capabilities:
       - routing
       - kubernetes-monitoring
       - dynatrace-api
     image: ""
-    group: $CLUSTER
+    group: "$CLUSTER"
     resources:
       requests:
         cpu: 500m
@@ -40,3 +34,6 @@ spec:
       limits:
         cpu: 1000m
         memory: 1.5Gi
+    tolerations:
+     - effect: NoSchedule
+       operator: Exists
