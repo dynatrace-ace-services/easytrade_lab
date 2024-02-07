@@ -73,15 +73,15 @@ Known limitations:
 
 Get new version of accountservice
 
-    wget  -O accountservice101.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easy_cloudnative_fullstack_deployment/main/accountservice101.yaml
+    wget  -O accountservice_version.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/accountservice_version.yaml
 
 Verify dynatrace variables 
 
     cat accountservice101.yaml
         
-Deploy accountservice 1.0.1 
+Deploy accountservice_version
 
-    kubectl -n easytrade apply -f accountservice101.yaml
+    kubectl -n easytrade apply -f accountservice_version.yaml
 
 Deploy accountservice 
 
@@ -153,7 +153,7 @@ Add label monitoring=dynatrace
 
 Delete accounservice101
 
-    kubectl delete -f accountservice101.yaml
+    kubectl delete -f accountservice_version.yaml
 
 Restart k3s server
 
