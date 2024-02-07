@@ -1,6 +1,6 @@
 # Dynatrace Operator - EasyTrade lab
 
-## Dynakube Cloud Native Full Stack
+## Dynakube
 Setup the variables
     
     export DT_TENANT_URL="https://abcd.live.dynatrace.com"
@@ -93,7 +93,7 @@ Delete Dynakube
 
      envsubst < dynakube.yaml | kubectl delete -f -
         
-Change classicFullStack to CloudNativeFUllStack
+Change ClassicFullStack to CloudNativeFUllStack
 
     vi dynakube.yaml
 
