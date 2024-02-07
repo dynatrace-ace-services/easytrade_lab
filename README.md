@@ -76,7 +76,7 @@ Get new version of accountservice
 
     wget  -O accountservice_version.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/accountservice_version.yaml
 
-Verify dynatrace variables and modify vesrion "1.0.xx" and LABXX
+Verify dynatrace variables and modify vesrion "1.0.xx" and "LABxx"
 
     vi accountservice_version.yaml
         
