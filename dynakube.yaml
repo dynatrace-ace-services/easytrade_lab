@@ -8,6 +8,9 @@ spec:
   apiUrl: $DT_TENANT_URL/api
   tokens: "dynakube"
   networkZone: $CLUSTER
+  #namespaceSelector:
+  #  matchLabels:
+  #    monitoring: dynatrace
   oneAgent:
     #cloudNativeFullStack:
     classicFullStack:
