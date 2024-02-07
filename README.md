@@ -130,6 +130,10 @@ Describe dynakube
 
     kubectl describe  dynakube -n dynatrace
 
+View yaml of a pod
+
+    kubectl get pods -n easytrade <podname> -oyaml
+
 Add label monitoring=dynatrace
 
     kubectl label namespace easytrade monitoring=dynatrace
