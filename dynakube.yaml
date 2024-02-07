@@ -12,8 +12,8 @@ spec:
   #  matchLabels:
   #    monitoring: dynatrace
   oneAgent:
-    #cloudNativeFullStack:
-    classicFullStack:
+    cloudNativeFullStack:
+    #classicFullStack:
       tolerations:
         - effect: NoSchedule
           operator: Exists
