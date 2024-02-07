@@ -31,7 +31,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.labels['app']
             - name: "DT_RELEASE_STAGE"
-              value: "LABXX"
+              value: "Labxx"
             - name: "DT_RELEASE_BUILD_VERSION"
               value: "09-02-2024"
           resources:
