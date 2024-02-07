@@ -31,7 +31,9 @@ spec:
                 fieldRef:
                   fieldPath: metadata.labels['app']
             - name: "DT_RELEASE_STAGE"
-              value: "UAT"
+              value: "LABXX"
+            - name: "DT_RELEASE_BUILD_VERSION"
+              value: "09-02-2024"
           resources:
             requests:
               cpu: 150m
