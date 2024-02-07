@@ -10,7 +10,7 @@ spec:
     metadata:
       labels:
         app: accountservice
-        app.kubernetes.io/version: "1.0.1"
+        app.kubernetes.io/version: "1.0.xx"
     spec:
       containers:
         - name: accountservice
