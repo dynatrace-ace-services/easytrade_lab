@@ -9,7 +9,8 @@ spec:
   tokens: "dynakube"
   networkZone: $CLUSTER
   oneAgent:
-    cloudNativeFullStack:
+    #cloudNativeFullStack:
+    classicFullStack:
       tolerations:
         - effect: NoSchedule
           operator: Exists
