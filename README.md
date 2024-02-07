@@ -15,9 +15,10 @@ Create namepspace
 
     kubectl create namespace dynatrace
     
-Dynatrace operator
+Dynatrace operator & CSI driver
 
     kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes.yaml
+    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
 
 Waiting Dynatrace operator
 
@@ -75,7 +76,7 @@ Get new version of accountservice
 
     wget  -O accountservice_version.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/accountservice_version.yaml
 
-Verify dynatrace variables and modify vesrion "1.0.xx"
+Verify dynatrace variables and modify vesrion "1.0.xx" and LABXX
 
     vi accountservice_version.yaml
         
@@ -86,24 +87,6 @@ Deploy accountservice_version
 Deploy accountservice 
 
     kubectl rollout restart -n easytrade deployment accountservice
-
-## From Classic to Cloud native full stack 
-
-Delete Dynakube
-
-     envsubst < dynakube.yaml | kubectl delete -f -
-        
-Change ClassicFullStack to CloudNativeFUllStack
-
-    vi dynakube.yaml
-
-Install CSI driver
-
-    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
-
-Deploy Dynakube
-
-     envsubst < dynakube.yaml | kubectl apply -f -
 
 ## Usefull commands
     
