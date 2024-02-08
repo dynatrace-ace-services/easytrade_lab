@@ -1,5 +1,13 @@
 # Dynatrace Operator - EasyTrade lab
 
+## Clean env
+Full clean EasyTravel Docker with OA and AG  
+
+    sudo /opt/dynatrace/oneagent/agent/uninstall.sh
+    sudo /opt/dynatrace/gateway/uninstall.sh
+    /home/dynatracelab_easytraveld/start-stop-easytravel.sh stop
+    sudo rm /etc/init.d/start-stop-easytravel.sh
+
 ## Dynakube
 Setup the variables
     
