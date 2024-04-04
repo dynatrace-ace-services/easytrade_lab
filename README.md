@@ -49,7 +49,7 @@ Dynakube validation
 
     kubectl exec deploy/dynatrace-operator -n dynatrace -- dynatrace-operator troubleshoot
 
-Waiting dynatrace pods
+Waiting for Dynatrace pods
 
     while [[ `kubectl get pods -n dynatrace | grep activegate | grep "0/"` ]];do kubectl get pods -n dynatrace;echo "==> waiting for activegate pod ready";sleep 3; done
 
@@ -64,7 +64,7 @@ Easytrade installation
     git clone https://github.com/Dynatrace/easytrade.git;
     kubectl -n easytrade apply -f ./easytrade/kubernetes-manifests;
     
-Waiting EasyTrade frontend pods
+Waiting for EasyTrade frontend pods
 
     while [[ `kubectl get pods -n easytrade | grep frontend | grep "0/"` ]];do kubectl get pods -n easytrade;echo "==> waiting for frontend pod ready";sleep 3; done
   
