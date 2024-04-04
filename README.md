@@ -28,7 +28,7 @@ Dynatrace operator & CSI driver
     kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes.yaml
     kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
 
-Waiting for Dynatrace operator
+Waiting for Dynatrace operator ready
 
     kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
 
@@ -49,7 +49,7 @@ Dynakube validation
 
     kubectl exec deploy/dynatrace-operator -n dynatrace -- dynatrace-operator troubleshoot
 
-Waiting for Dynatrace pods
+Waiting for Dynatrace pods ready
 
     while [[ `kubectl get pods -n dynatrace | grep activegate | grep "0/"` ]];do kubectl get pods -n dynatrace;echo "==> waiting for activegate pod ready";sleep 3; done
 
@@ -64,7 +64,7 @@ Easytrade installation
     git clone https://github.com/Dynatrace/easytrade.git;
     kubectl -n easytrade apply -f ./easytrade/kubernetes-manifests;
     
-Waiting for EasyTrade frontend pods
+Waiting for EasyTrade frontend pods ready
 
     while [[ `kubectl get pods -n easytrade | grep frontend | grep "0/"` ]];do kubectl get pods -n easytrade;echo "==> waiting for frontend pod ready";sleep 3; done
   
