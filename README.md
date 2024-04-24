@@ -25,8 +25,8 @@ Create namepspace
     
 Dynatrace operator & CSI driver
 
-    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes.yaml
-    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v0.14.2/kubernetes-csi.yaml
+    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.0.1/kubernetes.yaml
+    kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.0.1/kubernetes-csi.yaml
 
 Waiting for Dynatrace operator ready
 
