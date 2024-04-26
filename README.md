@@ -88,7 +88,7 @@ Verify dynatrace variables and modify vesrion "1.0.xx" and "LABxx"
 
     vi accountservice.yaml
         
-Deploy accountservice
+Apply accountservice
 
     kubectl -n easytrade apply -f accountservice.yaml
 
