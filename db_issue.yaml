@@ -13,9 +13,9 @@ spec:
     spec:
       containers:
         - name: db
-          image: europe-docker.pkg.dev/dynatrace-demoability/docker/easytrade/db:d863a2eg
+          image: europe-docker.pkg.dev/dynatrace-demoability/docker/easytrade/db:d863a2e
           ports:
-            - containerPort: 1433
+            - containerPort: 1434
           env:
             - name: SA_PASSWORD
               value: "yourStrong(!)Password"
