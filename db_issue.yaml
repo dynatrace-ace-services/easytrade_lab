@@ -34,5 +34,6 @@ spec:
     app: db
   ports:
     - name: mssql
-      port: 1433
-      targetPort: 1433
+      port: 1434
+      targetPort: 1434
+      
