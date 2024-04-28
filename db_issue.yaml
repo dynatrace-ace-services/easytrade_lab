@@ -13,9 +13,9 @@ spec:
     spec:
       containers:
         - name: db
-          image: europe-docker.pkg.dev/dynatrace-demoability/docker/easytrade/db:d863a2e
+          image: europe-docker.pkg.dev/dynatrace-demoability/docker/easytrade/db:d863a2e#
           ports:
-            - containerPort: 1434
+            - containerPort: 1433
           env:
             - name: SA_PASSWORD
               value: "yourStrong(!)Password"
@@ -34,6 +34,6 @@ spec:
     app: db
   ports:
     - name: mssql
-      port: 1434
-      targetPort: 1434
+      port: 1433
+      targetPort: 1433
       
