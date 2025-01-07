@@ -21,6 +21,7 @@ spec:
           operator: Exists
       args:
         - --set-host-group=$CLUSTER
+        - --set-host-tag=dt.cost.costcenter=$CLUSTER
       env:
         - name: ONEAGENT_ENABLE_VOLUME_STORAGE
           value: "true"
