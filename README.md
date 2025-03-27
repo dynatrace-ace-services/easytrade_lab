@@ -61,7 +61,7 @@ Create namespace
 
 Easytrade installation
 
-    git clone https://github.com/Dynatrace/easytrade.git;
+    git clone https://github.com/Dynatrace/easytrade;
     kubectl -n easytrade apply -f ./easytrade/kubernetes-manifests;
     
 Waiting for EasyTrade frontend pods ready
