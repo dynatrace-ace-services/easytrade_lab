@@ -61,13 +61,17 @@ Create namespace
 
 Easytrade installation
 
-    git clone https://github.com/Dynatrace/easytrade;
-    kubectl -n easytrade apply -f ./easytrade/kubernetes-manifests;
+    git clone https://github.com/Dynatrace/easytrade.git
+    kubectl -n easytrade apply -f ./kubernetes-manifests/problem-patterns
     
 Waiting for EasyTrade frontend pods ready
 
     while [[ `kubectl get pods -n easytrade | grep frontend | grep "0/"` ]];do kubectl get pods -n easytrade;echo "==> waiting for frontend pod ready";sleep 3; done
-  
+
+Get the ip of reverse proxy (look for EXTERNAL-IP of frontendreverseproxy)
+
+    kubectl -n easytrade get svc
+
 ## Setup Dynatrace
 Additionnal configurations recommanded:  
  - from the K8S settings view : enable monitor events, anomalie detection 
