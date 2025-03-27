@@ -63,7 +63,7 @@ Easytrade installation
 
     git clone https://github.com/Dynatrace/easytrade.git
     cd easytrade
-    kubectl -n easytrade apply -f ./kubernetes-manifests/problem-patterns
+    kubectl -n easytrade apply -f ./kubernetes-manifests/release
     #optional (generate problem automatically) kubectl -n easytrade apply -f ./kubernetes-manifests/problem-patterns
     
 Waiting for EasyTrade frontend pods ready
