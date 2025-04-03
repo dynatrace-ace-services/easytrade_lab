@@ -84,6 +84,14 @@ Known limitations:
  - impact : the Dashboards "Kubernetes cluster overview" is impacted on 5 tiles
  - workaround : clone the dashboard and use another filter on these tiles
 
+## Grant viewer role to service accounts
+https://docs.dynatrace.com/docs/shortlink/kubernetes-tagging#viewer
+Create the following Role and RoleBinding, which allow the default service account to view the necessary metadata about your namespace easytrade
+
+    wget  -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
+    kubectl -n namespace1 create -f dynatrace-oneagent-metadata-viewer.yaml
+
+
 ## New release
 
 Get new version of accountservice
