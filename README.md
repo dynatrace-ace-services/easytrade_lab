@@ -11,8 +11,8 @@ Full clean EasyTravel Docker with OA and AG
 ## Dynakube
 Setup the variables
     
-    export DT_TENANT_URL="https://abcd.live.dynatrace.com"
-    export DT_API_TOKEN="XXX"
+    export DT_TENANT_URL=https://abcd.live.dynatrace.com
+    export DT_API_TOKEN=XXX
     export CLUSTER=k3s123
 
 Installation K3S
