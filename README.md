@@ -85,11 +85,11 @@ Known limitations:
  - workaround : clone the dashboard and use another filter on these tiles
 
 ## Grant viewer role to service accounts
+Create the following Role and RoleBinding, which allow the default service account to view the necessary metadata about your namespace easytrade  
 https://docs.dynatrace.com/docs/shortlink/kubernetes-tagging#viewer  
-Create the following Role and RoleBinding, which allow the default service account to view the necessary metadata about your namespace easytrade
 
     wget  -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
-    kubectl -n namespace1 create -f dynatrace-oneagent-metadata-viewer.yaml
+    kubectl -n easytrade create -f dynatrace-oneagent-metadata-viewer.yaml
 
 
 ## New release
