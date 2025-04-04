@@ -91,6 +91,9 @@ Create the following Role and RoleBinding, which allow the default service accou
     wget  -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
     kubectl -n easytrade create -f dynatrace-oneagent-metadata-viewer.yaml
 
+=> Restart services easytrade
+
+    kubectl delete --all pods -n easytrade
 
 ## New release
 
