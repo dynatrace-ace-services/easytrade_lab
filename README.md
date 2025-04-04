@@ -88,7 +88,7 @@ Known limitations:
 => [Grant viewer role to service accounts](https://docs.dynatrace.com/docs/shortlink/kubernetes-tagging#viewer)   
 Create the following Role and RoleBinding, which allow the default service account to view the necessary metadata about your namespace easytrade  
 
-    wget  -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
+    wget -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
     kubectl -n easytrade create -f dynatrace-oneagent-metadata-viewer.yaml
 
 => Restart services easytrade
