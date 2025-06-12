@@ -35,10 +35,10 @@ spec:
     resources:
       requests:
         cpu: 500m
-        memory: 512Mi
+        memory: 1.5Mi
       limits:
         cpu: 1000m
-        memory: 1.5Gi
+        memory: 2Gi
     tolerations:
      - effect: NoSchedule
        operator: Exists
