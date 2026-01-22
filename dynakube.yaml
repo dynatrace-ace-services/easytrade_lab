@@ -1,13 +1,17 @@
-apiVersion: dynatrace.com/v1beta1
+apiVersion: dynatrace.com/v1beta5
 kind: DynaKube
 metadata:
   name: $CLUSTER
   namespace: dynatrace
   annotations:
+    feature.dynatrace.com/k8s-app-enabled: "true"
+    feature.dynatrace.com/injection-readonly-volume: "true"
 spec:
   apiUrl: $DT_TENANT_URL/api
   tokens: "dynakube"
   networkZone: $CLUSTER
+  metadataEnrichment:
+    enabled: true
   #namespaceSelector:
   #  matchLabels:
   #    monitoring: dynatrace
@@ -17,8 +21,10 @@ spec:
     #classicFullStack:
       tolerations:
         - effect: NoSchedule
+          key: node-role.kubernetes.io/master
           operator: Exists
         - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
           operator: Exists
       args:
         - --set-host-tag=dt.cost.costcenter=$CLUSTER
