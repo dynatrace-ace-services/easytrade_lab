@@ -70,6 +70,10 @@ Waiting for EasyTrade frontend pods ready
 
     while [[ `kubectl get pods -n easytrade | grep frontend | grep "0/"` ]];do kubectl get pods -n easytrade;echo "==> waiting for frontend pod ready";sleep 3; done
 
+Add label app=easytrade (for security_context)
+
+    kubectl label namespace easytrade app=easytrade
+
 Get the ip of reverse proxy (look for EXTERNAL-IP of frontendreverseproxy)
 
     kubectl -n easytrade get svc
