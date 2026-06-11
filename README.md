@@ -101,9 +101,8 @@ Create the following Role and RoleBinding, which allow the default service accou
 
 => add label on workload easytrade-accountservice - to validate the RoleBinding configuration
 
-    kubectl patch deployment easytrade-accountservice -n easytrade --patch '{"spec":{"template":{"metadata":{"labels":{"app":"accountservice"}}}}}'
+    kubectl patch deployment easytrade-accountservice -n easytrade --patch '{"spec":{"template":{"metadata":{"labels":{"app":"accountservice"},"annotations":{"app":"accountservice"}}}}}'
     kubectl rollout restart deployment easytrade-accountservice -n easytrade
-
 
 => Restart services easytrade
 
