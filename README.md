@@ -92,17 +92,16 @@ Additionnal configurations recommanded:
  - from the K8S settings view : enable monitor events, anomalie detection 
  - follow the recommandation for easytrade : https://github.com/Dynatrace/easytrade
 
-Known limitations:  
- - host k3s is not reconnized as a technologie = "Kubernetes" (softwaretechnologies("KUBERNETES"))
- - impact : the Dashboards "Kubernetes cluster overview" is impacted on 5 tiles
- - workaround : clone the dashboard and use another filter on these tiles
-
 ## Create [Kubernetes] tags from labels 
 => [Grant viewer role to service accounts](https://docs.dynatrace.com/docs/shortlink/kubernetes-tagging#viewer)   
 Create the following Role and RoleBinding, which allow the default service account to view the necessary metadata about your namespace easytrade  
 
     wget -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
     kubectl -n easytrade create -f dynatrace-oneagent-metadata-viewer.yaml
+
+=> add label on workload easytrade-accountservice
+
+    kubectl label deployment easytrade-accountservice app=accountservice -n easytrade --overwrite
 
 => Restart services easytrade
 
