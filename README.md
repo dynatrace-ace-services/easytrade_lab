@@ -168,6 +168,10 @@ Describe dynakube
 
     kubectl describe  dynakube -n dynatrace
 
+Delete dynakube 
+
+    kubectl delete dynakube $CLUSTER -n dynatrace 
+
 View yaml of a pod
 
     kubectl get pods -n easytrade <podname> -oyaml
