@@ -12,12 +12,12 @@ spec:
   networkZone: $CLUSTER
   metadataEnrichment:
     enabled: true
-  #namespaceSelector:
-  #  matchLabels:
-  #    monitoring: dynatrace
   oneAgent:
     hostGroup: $CLUSTER
     cloudNativeFullStack:
+      #namespaceSelector:
+      #  matchLabels:
+      #    monitoring: dynatrace
     #classicFullStack:
       tolerations:
         - effect: NoSchedule
