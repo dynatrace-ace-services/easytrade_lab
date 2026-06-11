@@ -18,6 +18,8 @@ spec:
       #namespaceSelector:
       #  matchLabels:
       #    monitoring: dynatrace
+      metadataEnrichment:
+        enabled: true
     #classicFullStack:
       tolerations:
         - effect: NoSchedule
