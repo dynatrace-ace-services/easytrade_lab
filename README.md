@@ -99,7 +99,7 @@ Create the following Role and RoleBinding, which allow the default service accou
     wget -O dynatrace-oneagent-metadata-viewer.yaml https://raw.githubusercontent.com/dynatrace-ace-services/easytrade_lab/main/dynatrace-oneagent-metadata-viewer.yaml
     kubectl -n easytrade create -f dynatrace-oneagent-metadata-viewer.yaml
 
-=> add label on workload easytrade-accountservice
+=> add label on workload easytrade-accountservice - to validate the RoleBinding configuration
 
     kubectl patch deployment easytrade-accountservice -n easytrade --patch '{"spec":{"template":{"metadata":{"labels":{"app":"accountservice"}}}}}'
     kubectl rollout restart deployment easytrade-accountservice -n easytrade
