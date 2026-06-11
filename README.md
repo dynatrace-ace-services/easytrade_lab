@@ -61,10 +61,19 @@ Create namespace
 
 Easytrade installation
 
-    git clone https://github.com/Dynatrace/easytrade.git
-    cd easytrade
-    kubectl -n easytrade apply -f ./kubernetes-manifests/release
-    #optional (generate problem automatically) kubectl -n easytrade apply -f ./kubernetes-manifests/problem-patterns
+# install helm pour easytrade
+    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+    mkdir -p ~/.kube
+    sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+    sudo chown $(id -u):$(id -g) ~/.kube/config
+
+#install easytrade
+
+    helm install easytrade oci://europe-docker.pkg.dev/dynatrace-demoability/helm/easytrade --namespace easytrade --create-namespace
+    while [[ `kubectl get pods -n easytrade | grep frontend | grep "0/"` ]];do kubectl get pods -n easytrade;echo "==> waiting for frontend pod ready";sleep 3; done
+    #create label app=easytrade (for security_context)
+    kubectl label namespace easytrade app=easytrade
+
     
 Waiting for EasyTrade frontend pods ready
 
