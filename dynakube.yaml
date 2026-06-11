@@ -10,8 +10,6 @@ spec:
   apiUrl: $DT_TENANT_URL/api
   tokens: "dynakube"
   networkZone: $CLUSTER
-  metadataEnrichment:
-    enabled: true
   oneAgent:
     hostGroup: $CLUSTER
     cloudNativeFullStack:
